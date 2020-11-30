@@ -109,6 +109,15 @@ int main(int argc, char** argv)
 
     // Arm vehicle
 
+  
+    std::cout << "Arming..." << std::endl;
+    const Action::Result arm_result = action->arm();
+
+    if (arm_result != Action::Result::Success) {
+    std::cout << "Arming failed:" << arm_result << std::endl;
+    return 1;
+    }
+
     // Take off
 
     // Let it hover for a bit before landing again.
